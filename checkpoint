@@ -1,0 +1,32 @@
+def analyze_sentence():  
+    sentence = ""  
+    print("Please enter a sentence that ends with a period (.) character: ")  
+    
+    while True:  
+        char = input("Enter a character (or '.' to finish): ")  
+        if char == '.':  
+            sentence += char  
+            break  
+        else:  
+            sentence += char  
+ 
+    length = 0  
+    word_count = 0  
+    vowel_count = 0  
+    vowels = "aeiouAEIOU"  # List of vowels (both lowercase and uppercase)  
+  
+    for char in sentence:  
+        length += 1  # Increment character count  
+        if char == ' ':  
+            word_count += 1  # Increment word count only between words  
+        if char in vowels:  
+            vowel_count += 1  # Increment vowel count  
+
+    if length > 0:  # If the sentence is not empty  
+        word_count += 1  # Adding the last word before the period  
+
+    print(f"Length of the sentence: {length}")  
+    print(f"Number of words in the sentence: {word_count}")  
+    print(f"Number of vowels in the sentence: {vowel_count}")  
+ 
+analyze_sentence()  
